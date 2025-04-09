@@ -71,7 +71,12 @@
         }
 
 
-
+        public function getOne($conn,$id){
+            $req = $conn->prepare("SELECT * FROM user WHERE iduser = :iduser");
+            $req->bindParam(':iduser', $id);
+            $req->execute();
+            return $req->fetch();
+        }
 
 
 

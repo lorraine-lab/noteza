@@ -31,7 +31,12 @@ class Note {
 
     }
 
-
+    public function allNoteByStudent($conn,$iduser){
+        $req = $conn -> prepare("SELECT * FROM note where iduser = :iduser");
+        $req -> bindParam(':iduser', $iduser);
+        $req -> execute();
+        return $req->fetchAll();
+    }
     public function studentExist($conn,$iduser){
         $req = $conn -> prepare("SELECT * FROM note where iduser = :iduser");
         $req -> bindParam(':iduser', $iduser);

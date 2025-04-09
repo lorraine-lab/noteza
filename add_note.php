@@ -90,9 +90,9 @@
             <ul class="nav nav-tabs dzm-tabs">
                 <li class="nav-item" >
                     <select class="default-select form-control wide" name="type_examen" id="">
-                        <option value="cc">Contrôle Continu</option>
-                        <option value="examen">Session Normale</option>
-                        <option value="rattrapage">Session de Rattrapage</option>
+                        <option value="Contrôle Continu">Contrôle Continu</option>
+                        <option value="Session Normale">Session Normale</option>
+                        <option value="Session de Rattrapage">Session de Rattrapage</option>
                     </select>
                 </li>
                 <li>

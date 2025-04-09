@@ -16,8 +16,8 @@
                 <form action="controllers/filiere.php" method="POST">
                      <div class="mb-3">
                         <input type="text" class="form-control" id="codefiliere" value="<?=$row['codefiliere']?>" name="codefiliere" placeholder="Entrer le code de la filiere">
-                        <input type="hidden" name="idfiliere" value="<?=$idfiliere?>">
-                        <input type="hidden" name="id" value="<?=$row['idfiliere']?>">
+                       
+                        <input type="hidden" name="idfiliere" value="<?=$row['idfiliere']?>">
 
                      </div>
                      <div class="mb-3">

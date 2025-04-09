@@ -10,7 +10,7 @@
     $user = new User();
     $filiere = new Filiere();
     $contient = new Contient();
-    $idfiliere = $_GET['filiere'];
+    // $idfiliere = $_GET['filiere'];
     $matiere = new Matiere();
     $idteacher = $_GET['iduser'];
     $allmatiere = $matiere ->getallmatierebyteacher($conn,$idteacher);
@@ -23,7 +23,7 @@
 
     require_once ('layouts/navbar.php'); 
 
-    $nbreMatiere = $contient -> getNumberofMatiere($conn, $idfiliere);
+    // $nbreMatiere = $contient -> getNumberofMatiere($conn, $idfiliere);
 
 ?>
 <div class="container">

@@ -37,7 +37,9 @@
                echo  $id = $validate['iduser'];
                echo $role = $user -> getRole($conn,$id);
             if ($user -> getRole($conn,$id) == 'student') {
-                header('location:../home.php');
+                $_SESSION['role'] = $user -> getRole($conn,$id);
+                $_SESSION['iduser'] = $id;
+                header('location:../student-dashboard.php');
             }if ($user -> getRole($conn,$id) == 'admin') {
                 $_SESSION['role'] = $user -> getRole($conn,$id);
                 header('location:../admin-dashbord.php');
