@@ -18,6 +18,17 @@
     $nomfiliere = $filiere -> getName($conn,$infoUser['idfiliere']);
     $allNotes = $note->allNoteByStudent($conn,$iduser);
     $rowcount = count($allNotes);
+
+    function decision($donnee){
+        $badge = "";
+        if ($donnee<10) {
+           $badge = '<div class="py-2 badge text-bg-danger">NON VALIDEE</div>';
+        }else {
+            $badge = '<div class="py-2 badge text-bg-success">VALIDEE</div>';
+        }
+        return $badge;
+    }
+
     require_once ('layouts/navbar.php'); 
 
     // $nbreMatiere = $contient -> getNumberofMatiere($conn, $idfiliere);
@@ -97,8 +108,9 @@
                         <tr>
                             <th scope="col">Nom de la Matière</th>
                             <th scope="col">Nombre de Crédit</th>
-                            <th scope="col">Type Examen </th>
+                            <th scope="col">Type d'Examen </th>
                             <th scope="col">Note</th>
+                            <th scope="col">Décision</th>
                         </tr>
                     </thead>
                     <?php
@@ -113,10 +125,11 @@
                             <td scope="row"><?=$infoMatiere['nbrecreditmatiere']?></td>
                             <td scope="row"><?=$key['type_examen']?></td>
                             <td scope="row"><?=$key['note']?></td>
+                            <td scope="row"><?=decision($key['note'])?></td>
                         </tr>
                 <?php
                 }}else {
-                echo "<tr><td colspan='4'>Vous n'avez pas encore de notes.</td></tr>"; 
+                echo "<tr><td colspan='5'>Vous n'avez pas encore de notes.</td></tr>"; 
                 }
                 ?>
                 </table>
